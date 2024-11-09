@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranked - Pick-Up Sports App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Ranked</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button onclick="toggleLoginForm()">Login / Sign Up</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero-section">
+        <h1>Ranked</h1>
+        <p>Your go-to app for pick-up sports, both casual and competitive. Find players, rank up, and challenge others near you!</p>
+        <button onclick="toggleLoginForm()">Get Started</button>
+    </header>
+
+    <section class="features" id="features">
+        <h2>App Features</h2>
+        <div class="feature-cards">
+            <div class="feature">
+                <h3>Dynamic Ranking System</h3>
+                <p>Climb the ranks by challenging and competing against other players.</p>
+            </div>
+            <div class="feature">
+                <h3>Location-Based Leaderboards</h3>
+                <p>Dominate your local courts and become a top-ranked player in your area.</p>
+            </div>
+            <div class="feature">
+                <h3>Skill Tracking & Stats</h3>
+                <p>Track your progress and see how you improve over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="login-form" id="loginForm">
+        <h3>Login / Sign Up</h3>
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="login()">Login</button>
+        <button onclick="closeLoginForm()">Cancel</button>
+    </div>
+
+    <footer id="contact">
+        <p>&copy; 2024 Ranked Sports App. All rights reserved.</p>
+        <p>Contact us: info@rankedapp.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
