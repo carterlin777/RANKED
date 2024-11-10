@@ -1,57 +1,35 @@
-import { loginUser, signUpUser, resetPassword, signInWithGoogle } from "./auth.js";
+import { auth, db } from "./Config.js";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
-function toggleLoginForm() {
-    const loginForm = document.getElementById("loginForm");
-    loginForm.style.display = loginForm.style.display === "flex" ? "none" : "flex";
-}
-
-function closeLoginForm() {
-    document.getElementById("loginForm").style.display = "none";
-}
-
-function login() {
-    const email = document.getElementById("username").value;
+export async function registerUser() {
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (email && password) {
-        loginUser(email, password);
-    } else {
-        alert("Please enter both email and password.");
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Store user info in Firestore
+        await setDoc(doc(db, "users", user.uid), {
+            uid: user.uid,
+            firstName,
+            lastName,
+            email
+        });
+
+        alert(`Welcome, ${firstName}! Your account has been created.`);
+        window.location.href = "index.html"; // Redirect after sign-up
+    } catch (error) {
+        console.error("Sign-up failed:", error.message);
+        alert("Sign-up failed: " + error.message);
     }
 }
-
-function signUp() {
-    const email = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    if (email && password) {
-        signUpUser(email, password);
-    } else {
-        alert("Please enter both email and password.");
-    }
-}
-
-function forgotPassword() {
-    const email = document.getElementById("username").value;
-
-    if (email) {
-        resetPassword(email);
-    } else {
-        alert("Please enter your email to reset your password.");
-    }
-}
-
-function googleSignIn() {
-    signInWithGoogle();
-}
-
-// Ensure event listeners are attached after DOM content is loaded
-document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("loginButton").addEventListener("click", login);
-    document.getElementById("signupButton").addEventListener("click", signUp);
-    document.getElementById("forgotPasswordButton").addEventListener("click", forgotPassword);
-    document.getElementById("googleSignInButton").addEventListener("click", googleSignIn); // Google Sign-In button
-    document.getElementById("login-signup-btn").addEventListener("click", toggleLoginForm);
-    document.getElementById("get-started-btn").addEventListener("click", toggleLoginForm);
-    document.getElementById("close-login-form-btn").addEventListener("click", closeLoginForm);
-});

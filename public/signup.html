@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Ranked</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <img src="images/greenballl.PNG" alt="Ranked Logo" class="logo">
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="#product" class="nav-link">Our Product</a>
+            <a href="#extensions" class="nav-link">Extensions</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#about" class="nav-link">About</a>
+        </nav>
+    </header>
+
+    <!-- Sign Up Section -->
+    <section class="signup-section">
+        <div class="signup-container">
+            <h2 class="signup-heading">Sign Up</h2>
+            <form id="signupForm" class="signup-form">
+                <input type="text" id="firstName" placeholder="First Name" class="signup-input" required>
+                <input type="text" id="lastName" placeholder="Last Name" class="signup-input" required>
+                <input type="email" id="email" placeholder="Email" class="signup-input" required>
+                <input type="password" id="password" placeholder="Password" class="signup-input" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" class="signup-input" required>
+                <button type="button" onclick="registerUser()" class="signup-button">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+    </section>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,165 +1,312 @@
+/* Global Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f5f5ff; /* Light purple background */
-  color: #4b0082; /* Dark purple text */
+    font-family: 'Montserrat', sans-serif;
+    color: #2d2d2d;
+    background-color: #fff;
 }
 
-.navbar {
-  width: 100%;
-  background-color: #800080;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
 }
 
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+.logo {
+    width: 50px;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
+.navigation {
+    display: flex;
+    gap: 25px;
+    align-items: center;
 }
 
-.nav-links li {
-  margin: 0 15px;
+.nav-link {
+    text-decoration: none;
+    color: #2d7a4a;
+    font-weight: 700;
 }
 
-.nav-links a, .nav-links button {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
+.signup-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2d7a4a;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-left: 20px;
 }
 
-.hero-section {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #800080;
-  color: white;
-  width: 100%;
+.signup-button:hover {
+    background-color: #246d3e;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.hero-section h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+/* Main Content Section */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    min-height: calc(100vh - 80px);
 }
 
-.hero-section p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.text-content {
+    width: 50%;
 }
 
-.hero-section button {
-  padding: 10px 20px;
-  background-color: white;
-  color: #800080;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+.image-content {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.hero-section button:hover {
-  background-color: #6a006a;
-  color: white;
+.big-picture {
+    width: 100%;
+    height: auto;
 }
 
-.features {
-  width: 80%;
-  text-align: center;
-  margin-top: 50px;
+.tagline {
+    font-weight: 700;
+    color: #2d7a4a;
+    margin-bottom: 10px;
 }
 
-.features h2 {
-  color: #800080;
-  margin-bottom: 30px;
+h1 {
+    font-size: 3rem;
+    color: #2d7a4a;
+    margin-bottom: 20px;
 }
 
-.feature-cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.subheading {
+    font-size: 1.2rem;
+    color: #2d2d2d;
+    margin-bottom: 30px;
 }
 
-.feature {
-  width: 30%;
-  background-color: white;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  text-align: center;
+.get-started-button {
+    font-size: 1rem;
+    padding: 10px 25px;
+    background-color: #2d7a4a;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.feature h3 {
-  color: #800080;
-  margin-bottom: 10px;
+.get-started-button:hover {
+    background-color: #246d3e;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.login-form {
-  display: none;
-  flex-direction: column;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  width: 90%;
-  max-width: 400px;
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .image-content {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .get-started-button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
 }
 
-.login-form h3 {
-  color: #800080;
-  margin-bottom: 10px;
+/* Upcoming Games Section */
+.upcoming-games {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
 }
 
-.login-form label {
-  margin: 10px 0 5px;
-  color: #4b0082;
+.upcoming-games h2 {
+    font-size: 2.5rem;
+    color: #2d7a4a;
+    margin-bottom: 10px;
 }
 
-.login-form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.subtext {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
 }
 
-.login-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #800080;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.game-cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-footer {
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  background-color: #4b0082;
-  color: white;
-  margin-top: 50px;
+.game-card {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-image-placeholder {
+    background-color: #ccc;
+    height: 150px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.game-card h3 {
+    font-size: 1.2rem;
+    color: #2d7a4a;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.learn-more-button {
+    background-color: #fff;
+    color: #2d7a4a;
+    font-size: 1rem;
+    padding: 8px 20px;
+    border: 2px solid #2d7a4a;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.learn-more-button:hover {
+    background-color: #2d7a4a;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .game-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        width: 80%;
+    }
+}
+
+/* Signup Section */
+.signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.signup-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.signup-heading {
+    font-size: 2rem;
+    color: #2d7a4a;
+    margin-bottom: 20px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signup-input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.signup-input:focus {
+    border-color: #2d7a4a;
+}
+
+.signup-button {
+    font-size: 1rem;
+    padding: 10px;
+    background-color: #2d7a4a;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #246d3e;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #2d7a4a;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
 }
