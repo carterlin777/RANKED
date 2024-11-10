@@ -1,5 +1,5 @@
 // auth.js
-import { auth } from "./Config.js"; // Import auth from config.js
+import { auth } from "./Config.js";
 
 // Login function
 export async function loginUser(email, password) {
