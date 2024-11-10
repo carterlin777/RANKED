@@ -1,0 +1,144 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1b1f1d;
+    color: #d3d3d3;
+    line-height: 1.6;
+}
+
+/* Menu Bar Styles */
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f3d2e;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-logo {
+    color: #a0cfa9;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.menu-links a {
+    color: #d3d3d3;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #8fbf96;
+}
+
+/* Header Styles with Offset for Fixed Menu Bar */
+header {
+    background-color: #0f3d2e;
+    color: #d3d3d3;
+    text-align: center;
+    padding: 10rem 2rem; /* Reduced padding to balance with menu bar */
+    margin-top: 4rem; /* Space below fixed menu */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: #a0cfa9;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #a0cfa9;
+    color: #1b1f1d;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #8fbf96;
+}
+
+/* Features Section */
+#features {
+    text-align: center;
+    padding: 5rem 1rem; /* Adjusted padding for balanced spacing */
+    color: #d3d3d3;
+}
+
+#features h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #a0cfa9;
+}
+
+/* Flexbox Layout for Feature Cards */
+.feature-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.feature-card {
+    background-color: #2a2f2c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background-color: #36413d;
+}
+
+.feature-card h3 {
+    color: #a0cfa9;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: #d3d3d3;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #0f3d2e;
+    color: #d3d3d3;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #a0cfa9;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: #8fbf96;
+}
