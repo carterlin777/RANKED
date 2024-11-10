@@ -13,14 +13,14 @@
             <li><a href="#">Home</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><button onclick="toggleLoginForm()">Login / Sign Up</button></li>
+            <li><button id="login-signup-btn">Login / Sign Up</button></li>
         </ul>
     </nav>
 
     <header class="hero-section">
         <h1>Ranked</h1>
         <p>Your go-to app for pick-up sports, both casual and competitive. Find players, rank up, and challenge others near you!</p>
-        <button onclick="toggleLoginForm()">Get Started</button>
+        <button id="get-started-btn">Get Started</button>
     </header>
 
     <section class="features" id="features">
@@ -41,15 +41,21 @@
         </div>
     </section>
 
-    <!-- Login Form -->
+    <!-- Test button for debugging -->
+    <button id="test-btn">Click Me</button>
+
+    <!-- Login/Signup Form -->
     <div class="login-form" id="loginForm" style="display: none;">
-        <h3>Login / Sign Up</h3>
+        <h3 id="formTitle">Login</h3>
         <label for="username">Email:</label>
         <input type="text" id="username" placeholder="Enter your email">
         <label for="password">Password:</label>
         <input type="password" id="password" placeholder="Enter your password">
         <button id="loginButton">Login</button>
-        <button onclick="closeLoginForm()">Cancel</button>
+        <button id="signupButton">Sign Up</button> <!-- New Sign Up Button -->
+        <button id="forgotPasswordButton">Forgot Password?</button> <!-- New Forgot Password Button -->
+        <button id="googleSignInButton">Sign in with Google</button> <!-- New Google Sign-In Button -->
+        <button id="close-login-form-btn">Cancel</button>
     </div>
 
     <footer id="contact">
@@ -58,6 +64,6 @@
     </footer>
 
     <!-- Import app.js as a module -->
-    <script type="module" src="app.js"></script>
+    <script type="module" src="./public/app.js"></script>
 </body>
 </html>
